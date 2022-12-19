@@ -25,6 +25,7 @@ published_at: 2022-12-21 01:00 # 未来の日時を指定する---
 このAirflowを複数のプロジェクトで共有しているため、あるプロジェクトが高負荷の処理を行った場合に他プロジェクトに影響がないようにする必要がありました。
 dbt Cloudが使えれば実際の処理はすべてdbt Cloudでやってくれるため、特段の考慮は不要でしたが、dbt Coreを使う前提なのでワーカーリソースは各プロジェクトで準備してもらうことにしました。
 その方法として、[DockerOperator](https://airflow.apache.org/docs/apache-airflow-providers-docker/stable/_api/airflow/providers/docker/operators/docker/index.html)を使うことにし、各プロジェクトが準備したサーバーにてDockerイメージを実行してもらうことにしました。
+今回はオンプレなのでDockerOperator一択でしたが、クラウド上であれば例えばAWSならば[BatchOperator](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/operators/batch.html)や[ECSOperator](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/operators/ecs.html)も選択肢に入っていたと思います。
 
 雑になりますが以下がイメージ図です。
 ![](/images/airflow-with-dbt-core/airflow-architecute.drawio.png)
