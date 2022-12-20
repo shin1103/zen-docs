@@ -101,7 +101,7 @@ DockerOperator(
 # 課題
 DockerOperatorで指定した`command`の実行中にエラーが発生した場合は`on_failure_callback`でコールバックを受け取り、Slack等への通知ができるのですが、`docker_url`で指定したサーバとの通信が失敗したり、`image`で指定したコンテナリポジトリからのイメージ取得に失敗した場合は`on_failure_callback`でコールバックを拾えないため、どのような形でエラーを検知するのかが課題となっています。
 
-**追記**
+##### 追記
 この記事の作成と並行してAirflowコミュニティに質問をしていたところAirflow Committeeの[Jarek Potiuk](https://github.com/potiuk)さんより以下の回答をいただきました。
 https://stackoverflow.com/questions/74609215/how-airflow-dockeroperator-send-notification-when-docker-image-creation-error/74861059#74861059
 
