@@ -3,12 +3,13 @@ title: "Airflowでサマータイムを考慮した話"
 emoji: "🐷"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['airflow', 'python']
-published: false
+published: true
 ---
 
 # 概要
-Airflowでサマータイムを考慮する必要があり、Airflowのタイムゾーンの取り扱いについての調査を実施。
-結果、サマータイムを意識する場合は、`Time zone aware DAGs`を使い、タイムゾーンの設定にTZ database name（例えばEurope/London、 America/New_York）を指定する必要がある。（標準時（例えばGMT、EST）ではだめ）
+Airflowでサマータイムを考慮する必要があり、Airflowのタイムゾーンの取り扱いについての調査を実施。調査結果は、以下の通り。
+
+個別のDAGでサマータイムを意識する場合は、`Time zone aware DAGs`を使い、タイムゾーンの設定に`TZ database name`（例えばEurope/London、 America/New_York）を指定する。（標準時（例えばGMT、EST）ではだめ）
 
 # 調査
 ## 方向性
@@ -30,13 +31,13 @@ dag = DAG("my_tz_dag", start_date=pendulum.datetime(2016, 1, 1, tz="Europe/Amste
 ## 設定値
 今回はロンドンでサマータイムを意識したかったので、ロンドンのサマータイムを考慮した場合どのような値にすればいいかを検討した。
 
-[タイムゾーンの一覧](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)を確認するとロンドンは以下の通りになっており、何を指定すればいいのかわからなかったので、それぞれを設定して実験をしてみた。
+[タイムゾーンの一覧](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)を確認するとロンドンは以下の通りになっており、何を指定すればいいのかわからなかったので、それぞれを設定して実験をしてみた。（UTCも念のため）
 
-| key                  | value         |
-| -------------------- | ------------- |
-| TZ database name     | Europe/London |
-| Standard Time        | GMT           |
-| Daylight Saving Time | BST           |
+| key                                            | value         |
+| ---------------------------------------------- | ------------- |
+| TZ database name（タイムゾーンデータベース名） | Europe/London |
+| Standard Time（標準時刻）                      | GMT           |
+| Daylight Saving Time（サマータイム）           | BST           |
 
 ```python
 import pendulum
@@ -73,4 +74,4 @@ for i in range(4):
 2023-03-28T00:00:00+00:00
 ```
 
-以上より、サマータイムを意識するためには、標準時を指定せずTZ database nameを指定する必要がある。
+以上より、サマータイムを意識するためには、標準時を指定せず`TZ database name`を指定する必要がある。
