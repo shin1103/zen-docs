@@ -55,5 +55,7 @@ Version error for package dbt-labs/dbt_utils: Could not find a satisfactory vers
 ![](/images/challenge-aggregate-dbt-project-in-dbtdocs/duplicate_master.png)
 図３：重複のスクリーンショット  
 
+マスター系データを定義するsource yamlをもったdbtプロジェクトを作成して、各システムのプロジェクトがそれを参照すれば解消できそうですが、dbt docsを作成するために実開発でプロジェクト間の依存関係を持たせるのは辛そうだなという印象です。
+
 # 検証結果
 `dbt package`のgitリポジトリ参照機能を用いて`dbt docs`を統合することは厳しそうです。`dbt Mesh`を導入するのがよいです
