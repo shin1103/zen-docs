@@ -58,4 +58,8 @@ Version error for package dbt-labs/dbt_utils: Could not find a satisfactory vers
 マスター系データを定義するsource yamlをもったdbtプロジェクトを作成して、各システムのプロジェクトがそれを参照すれば解消できそうですが、dbt docsを作成するために実開発でプロジェクト間の依存関係を持たせるのは辛そうだなという印象です。
 
 # 検証結果
-`dbt package`のgitリポジトリ参照機能を用いて`dbt docs`を統合することは厳しそうです。`dbt Mesh`を導入するのがよいです
+`dbt package`のgitリポジトリ参照機能を用いて`dbt docs`を統合することは厳しそうです。
+
+# 追記
+先日dbt labsより案内があった`How to get value from dbt Mesh.`というオンラインセミナーに参加しました。（別の打ち合わせがあったので、音声なしのスライドだけ見てました）
+その中で、`dbt Mesh`前のプロジェクト統合パターンのケース３として今回のケースが紹介されていました。dbt labsもこのケースはあまりよくなく`dbt Mesh`を進めていることがわかりました。
