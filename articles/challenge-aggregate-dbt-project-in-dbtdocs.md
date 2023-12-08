@@ -61,5 +61,5 @@ Version error for package dbt-labs/dbt_utils: Could not find a satisfactory vers
 `dbt package`のgitリポジトリ参照機能を用いて`dbt docs`を統合することは厳しそうです。
 
 # 追記
-先日dbt labsより案内があった`How to get value from dbt Mesh.`というオンラインセミナーに参加しました。（別の打ち合わせがあったので、音声なしのスライドだけ見てました）
-その中で、`dbt Mesh`前のプロジェクト統合パターンのケース３として今回のケースが紹介されていました。dbt labsもこのケースはあまりよくなく`dbt Mesh`を進めていることがわかりました。
+先日dbt labsより案内があった[How to get value from dbt Mesh](https://www.getdbt.com/resources/how-to-get-value-from-dbt-mesh)というオンラインセミナーに参加しました。（別の打ち合わせがあったので、音声なしのスライドだけ見てました。現在はオンデマンド配信になっているので登録すれば視聴可能なようです。）
+その中で、`dbt Mesh`前のプロジェクト統合パターンのケース３として今回のケースが紹介されていました。dbt labsはこのパターンを認識しており、`dbt Mesh`を推奨していました。
