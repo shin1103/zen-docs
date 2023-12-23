@@ -3,8 +3,9 @@ title: "複数のdbtプロジェクトをdbt docsでまとめようとした話"
 emoji: "📑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["dbt"]
-published: false
+published: true
 ---
+この記事は、[dbt Advent Calendar 2023](https://qiita.com/advent-calendar/2023/dbt) 24日目の記事です。
 # 概要
 私が所属するチームでは導入の敷居を下げるために１データソースに１dbtプロジェクトという構成になっています。そのため、[dbt docs](https://docs.getdbt.com/docs/collaborate/documentation)でドキュメントを作成した場合、データソースごとに`dbt docs`でWebサイトを立ち上げる必要があり、とても業務に使えるものではありませんでした。
 dbt Cloudであれば、[coalesce　2023](https://coalesce.getdbt.com/)で発表された[dbt Mesh](https://www.getdbt.com/product/dbt-mesh)を使って複数のプロジェクトを統合できるようですが、会社の都合上クラウドサービスを使うのは難易度が高いため、`dbt docs`でどうにかできないか検討し、以下の2点から実運用には耐えられないとの結論でした。
