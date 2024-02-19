@@ -49,7 +49,21 @@ wget https://github.com/open-metadata/OpenMetadata/releases/download/1.2.2-relea
 docker compose -f docker-compose.yml up --detach
 ```
 
+すでに英語のインデックスがある場合うまく入れ替えができないので手動でインデックスを削除するのがおすすめです。参考までに全インデックスを削除するスクリプトを記載します
+```python
+import urllib3
+import json
+BASE_URL = 'http://localhost:9200/'
+
+http = urllib3.PoolManager()
+
+response = http.request('GET', BASE_URL + '_cat/indices?format=json')
+es_index_list = json.loads(response.data.decode('utf-8'))
+for es_index in es_index_list:
+    http.request('DELETE', BASE_URL + es_index['index'])
+```
+
 # 感想
 kuromojiで日本語を解析しているだけあって、あいまいな検索の制度が圧倒的に良いです。
-例えば、「番号」で検索をする場合、デフォルトのインデックスは完全に「番号」でないと引っかからないですが、日本語インデックスは「電話番号」や「注文番号」などもしっかりヒットします。
+例えば、tel_numberカラムに「電話番号」と備考が記述されていた場合、デフォルトのインデックスは「電話番号」で検索しないと引っかからないですが、日本語インデックスは「電話」でもしっかりヒットします。
 また、前述した日本語UIもエンドユーザには受けがよく、アクティブに開発が継続していることから、フリーのデータカタログツールであればOpenMetadataが一番いいと感じました。
