@@ -3,7 +3,7 @@ title: "OpenMetadataでElasticSearchの日本語インデックスを作成す�
 emoji: "🗂"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["elasticsearch", "openmetadata"]
-published: false
+published: true
 ---
 # はじめに
 社内でデータカタログ導入に向けて調査を進めています。DataHubやAmundsenなどいくつか触ってみましたが、OpenMetadataが日本語UIが提供されていたり、kuromojiを使ったElasticSearchの日本語インデックスを張れるなど、日本語フレンドリーなところがとても気に入っています。
