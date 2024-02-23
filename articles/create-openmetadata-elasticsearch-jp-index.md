@@ -33,7 +33,7 @@ RUN bin/elasticsearch-plugin install analysis-kuromoji
 2. docker-compose.ymlファイルの修正
 まずはデフォルト状態のdocker-compose.ymlをダウンロードします。
 ```bash
-wget https://github.com/open-metadata/OpenMetadata/releases/download/1.3.-release/docker-compose.yml
+wget https://github.com/open-metadata/OpenMetadata/releases/download/1.3.0-release/docker-compose.yml
 ```
 ダウンロードしたdocker-compose.ymlを3か所修正します。
     1. L42 docker.elastic.co/elasticsearch/elasticsearch:8.10.2 → elasticsearch-kuromoji:8.10.2
