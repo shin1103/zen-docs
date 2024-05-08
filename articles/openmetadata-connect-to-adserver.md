@@ -3,7 +3,7 @@ title: "OpenMetadataとMicrosoft Active Directoryを連携する"
 emoji: "👋"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["openmetadata", "activedirectory"]
-published: false
+published: true
 ---
 # はじめに
 社内でデータカタログ導入に向けて調査を進めています。OpenMetadataについては[LDAP認証が行える](https://docs.open-metadata.org/v1.3.x/deployment/security/ldap)ことから、MicrosoftのActive Directoryと連携を行いましたので、その方法を記載します。
