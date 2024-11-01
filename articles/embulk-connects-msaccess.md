@@ -14,7 +14,7 @@ Embulkの`embulk-input-jdbc`を使ってMS Accessのデータを取得する方�
 - embulk-input-jdbc 0.13.2
 
 # 取得方法
-MS Access用のJDBCドライバとして(UCanAccess)[https://sourceforge.net/projects/ucanaccess/]というドライバが公開されている(最近フォークで(Github)[https://github.com/spannm/ucanaccess]にもライブラリが公開されていた。Java11以降サポートとのこと)。このJDBCドライバとEmbulkを組み合わせてアクセスできないか実験しました。
+MS Access用のJDBCドライバとして[UCanAccess](https://sourceforge.net/projects/ucanaccess/)というドライバが公開されている(最近フォークで[Github](https://github.com/spannm/ucanaccess)にもライブラリが公開されていた。Java11以降サポートとのこと)。このJDBCドライバとEmbulkを組み合わせてアクセスできないか実験しました。
 
 UCanAccessは`UCanaccess-5.0.1.jar`の本体のほかに以下4つのライブラリを参照。
 - commons-lang3-3.8.1.jar
@@ -22,7 +22,7 @@ UCanAccessは`UCanaccess-5.0.1.jar`の本体のほかに以下4つのライブ�
 - hsqldb-2.5.0.jar
 - jackcess-3.0.1.jar
 
-Embulkの`embulk-input-jdbc`では`driver_path`を指定することで任意のJDBCドライバが指定可能です。（私が調べた限りでは）ドライバは単位のjarファイルを指定する必要があるので、fatjarを作成する必要があったので、以下の通りpom.xmlを作成しビルドしました。
+Embulkの`embulk-input-jdbc`では`driver_path`を指定することで任意のJDBCドライバが指定可能です。（私が調べた限りでは）ドライバは単一のjarファイルを指定する必要があるので、fatjarを作成する必要があったので、以下の通りpom.xmlを作成しビルドしました。
 
 ```bash
 mvn package
