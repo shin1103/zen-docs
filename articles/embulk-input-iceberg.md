@@ -8,7 +8,7 @@ published: true
 # 初めに
 データエンジニアをやっていると少なくないケースでバックエンドがJavaであることがあり、Javaを勉強したいと思っていました。最近[Apache Iceberg](https://iceberg.apache.org/)に興味を持ち勉強している中で業務で使用しているEmbulkのプラグインにIcebergがないと思い、Javaの勉強がてら作ってみようと決心し作ってみました。  
 本当はoutputの方が需要はありそうだったのですが、実装の考慮点が少なそうなinputを選択してIcebergのプラグインを作成しました。
-ソースコードは[Github](https://github.com/shin1103/embulk-input-iceberg)に公開するとともに、Mavenリポジトリに登録しています。
+ソースコードとプラグインの使い方は[Github](https://github.com/shin1103/embulk-input-iceberg)に公開するとともに、Mavenリポジトリに登録しています。
 
 # 完成までの道のり
 
